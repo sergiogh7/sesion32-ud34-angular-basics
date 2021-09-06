@@ -1,0 +1,10 @@
+.btn-md{
+  text-align: center;
+  margin: 2px;
+}
+
+body{
+  background-color: rgb(91, 200, 204);
+  font-family: Arial;
+  font-weight: bold;
+}

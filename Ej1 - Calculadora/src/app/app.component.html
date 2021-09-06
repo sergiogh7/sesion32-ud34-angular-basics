@@ -1,0 +1,104 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container-fluid" style="background-color: rgb(91, 200, 204); padding: 50px;">
+
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-width: 280px; border: 3px solid rgb(75, 173, 177);">
+
+          <div class="container" style="height: 38px;">
+            <div class="col-sm-12 form-control text-lg-right" style="text-align: right; color: rgb(95, 95, 95); height: 38px;"> {{input}}</div>
+          </div>
+
+          <div class="container" style="height: 38px;">
+            <div class="col-sm-12 form-control text-lg-right" style="text-align: right; color: rgb(95, 95, 95); height: 38px;">{{result}}</div>
+          </div>
+
+          <div class="container" style="display: flex; flex-direction: row;">
+            <div class="container" style=" display: flex; flex-direction: row; background-color: rgb(70, 70, 70);">
+              <button class="btn btn-md" type="button" style="color: white;" (click)="pressNum('8')">8</button>
+              <button class="btn btn-md" type="button" style="color: white;" (click)="pressNum('9')">9</button>
+              <button class="btn btn-md" type="button" style="color: white;" (click)="pressNum('7')">7</button>
+            </div>
+            <div class="container" style="background-color: rgb(84, 228, 209);">
+              <button class="btn btn-md" type="button" style="color: white;" (click)="allClear()">DEL</button>
+            </div>
+          </div>
+
+          <div class="container" style="display: flex; flex-direction: row;">
+            <div class="container" style=" display: flex; flex-direction: row; background-color: rgb(70, 70, 70);">
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: rgb(70, 70, 70)">1</button>
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: rgb(70, 70, 70)">2</button>
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: rgb(70, 70, 70)">3</button>
+            </div>
+            <div class="container" style="background-color: rgb(84, 228, 209);">
+              <button class="btn btn-md" type="button" style="background-color: rgb(84, 228, 209); color: white;" (click)="pressOperator('/')">/</button>
+            </div>
+          </div>
+
+          <div class="container" style="display: flex; flex-direction: row;">
+            <div class="container" style=" display: flex; flex-direction: row; background-color: rgb(70, 70, 70);">
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: white;" (click)="pressNum('6')">6</button>
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: white;" (click)="pressNum('5')">5</button>
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: white;" (click)="pressNum('4')">4</button>
+            </div>
+            <div class="container" style="background-color: rgb(84, 228, 209);">
+              <button class="btn btn-md" type="button" style="background-color: rgb(84, 228, 209); color: white;" (click)="pressOperator('*')">*</button>
+            </div>
+          </div>
+
+          <div class="container" style="display: flex; flex-direction: row;">
+            <div class="container" style=" display: flex; flex-direction: row; background-color: rgb(70, 70, 70);">
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: white;" (click)="pressNum('3')">3</button>
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: white;" (click)="pressNum('2')">2</button>
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: white;" (click)="pressNum('1')">1</button>
+            </div>
+            <div class="container" style="background-color: rgb(84, 228, 209);">
+              <button class="btn btn-md" type="button" style="background-color: rgb(84, 228, 209); color: white;" (click)="pressOperator('-')">-</button>
+            </div>
+          </div>
+
+          <div class="container" style="display: flex; flex-direction: row;">
+            <div class="container" style=" display: flex; flex-direction: row; background-color: rgb(70, 70, 70);">
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: rgb(70, 70, 70)">1</button>
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: rgb(70, 70, 70)">2</button>
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: rgb(70, 70, 70)">3</button>
+            </div>
+            <div class="container" style="background-color: rgb(84, 228, 209);">
+              <button class="btn btn-md" type="button" style="background-color: rgb(84, 228, 209); color: white;" (click)="pressOperator('+')">+</button>
+            </div>
+          </div>
+
+          <div class="container" style="display: flex; flex-direction: row;">
+            <div class="container" style=" display: flex; flex-direction: row; background-color: rgb(70, 70, 70);">
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: white;" (click)="pressNum('.')">.</button>
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: white;" (click)="pressNum('0')">0</button>
+              <button class="btn btn-md" type="button" style="background-color: rgb(70, 70, 70); color: white; font-size: 12px;" (click)="pressNum('00')">00</button>
+            </div>
+            <div class="container" style="background-color: rgb(84, 228, 209);">
+              <button class="btn btn-md" type="button" style="background-color: rgb(84, 228, 209); color: white;" (click)="getAnswer()">=</button>
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </body>
+</html>
