@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+    <div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <h1>Administración de artículos</h1>
+        <table *ngIf="hayRegistros(); else sinarticulos">
+          <tr>
+            <td>Codigo</td><td>Descripcion</td><td>Precio</td><td>Borrar</td><td>Seleccionar</td>
+          </tr>
+          <tr *ngFor="let art of articulos">
+            <td>{{art.codigo}}</td>
+            <td>{{art.descripcion}}</td>
+            <td>{{art.precio}}</td>
+            <td><button (click)="borrar(art)">Borrar</button></td>
+            <!-- Llama a la funcion seleccionar() pasandole el objeto elegido-->
+            <td><button (click)="seleccionar(art)">Seleccionar</button></td>
+          </tr>
+        </table>
+
+        <ng-template #sinarticulos><p>No hay articulos.</p></ng-template>
+
+        <div class="divSecundario" style="display: flex; flex-direction: column; justify-content: left; ">
+          <h2>Artículo seleccionado</h2>
+          <p class="parrafo">
+            Codigo:<input type="text" [(ngModel)]="art.codigo" />
+          </p >
+
+          <p class="parrafo">Descripción:<input type="text" [(ngModel)]="art.descripcion" />
+          </p>
+
+          <p class="parrafo">
+            Precio:<input type="number" [(ngModel)]="art.precio" />
+          </p>
+
+          <p><button (click)="agregar()">Agregar</button>
+          <button (click)="modificar()">Modificar</button></p>
+        </div>
+    </div>
+
+  </body>
+</html>
